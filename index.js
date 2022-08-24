@@ -641,7 +641,12 @@ function bundleMain ({
     // Minify for better performance
     config.plugin('uglify').use(TerserPlugin, [
       {
-        parallel: true
+        parallel: true,
+        terserOptions: {
+          format: {
+            comments: false,
+          }
+        },
       }
     ])
   }
